@@ -30,4 +30,6 @@ zephyr_library_sources_ifdef(CONFIG_BOOT_FLEXSPI_NOR ${MCUX_BOARD}/${MCUX_BOARD}
 zephyr_library_sources_ifdef(CONFIG_DEVICE_CONFIGURATION_DATA ${MCUX_BOARD}/${MCUX_BOARD}_sdram_ini_dcd.c)
 elseif (${MCUX_BOARD} MATCHES "evkmimxrt6[0-9][0-9]")
 zephyr_library_sources_ifdef(CONFIG_NXP_IMX_RT6XX_BOOT_HEADER ${MCUX_BOARD}/flash_config.c)
+elseif (CONFIG_BOARD_TEENSY40 OR CONFIG_BOARD_TEENSY41)
+zephyr_library_sources_ifdef(CONFIG_BOOT_FLEXSPI_NOR evkmimxrt1060/evkmimxrt1060_flexspi_nor_config.c)
 endif()
